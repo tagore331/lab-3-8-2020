@@ -1,0 +1,61 @@
+#Initialize array     
+arr1 = [1, 2, 3, 4, 5];     
+     
+#Create another array arr2 with size of arr1    
+arr2 = [None] * len(arr1);    
+     
+#Copying all elements of one array into another    
+for i in range(0, len(arr1)):    
+    arr2[i] = arr1[i];     
+     
+#Displaying elements of array arr1     
+print("Elements of original array: ");    
+for i in range(0, len(arr1)):    
+   print(arr1[i]),    
+     
+print();    
+     
+#Displaying elements of array arr2     
+print("Elements of new array: ");    
+for i in range(0, len(arr2)):    
+   print(arr2[i]),        
+   
+   $python main.py
+Elements of original array: 
+1 2 3 4 5 ()
+Elements of new array: 
+1 2 3 4 5
+
+# Python code to remove duplicate elements 
+def Remove(duplicate): 
+    final_list = [] 
+    for num in duplicate: 
+        if num not in final_list: 
+            final_list.append(num) 
+    return final_list 
+      
+# Driver Code 
+duplicate = [2, 4, 10, 20, 5, 2, 20, 4] 
+print(Remove(duplicate))
+
+Output:
+
+[2, 4, 10, 20, 5]
+
+import numpy as np
+x = np.array([24, 27, 30, 29, 18, 14])
+print("Original array:")
+print(x)
+y = np.empty_like (x)
+y[:] = x
+print("\nCopy of the said array:")
+print(y)
+
+Copy
+Sample Output:
+
+Original array:
+[24 27 30 29 18 14]
+
+Copy of the said array:
+[24 27 30 29 18 14]
