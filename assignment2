@@ -1,0 +1,100 @@
+# Searching an element in a list/array in python 
+# can be simply done using \'in\' operator 
+# Example: 
+# if x in arr: 
+#   print arr.index(x) 
+  
+# If you want to implement Linear Search in python 
+  
+# Linearly search x in arr[] 
+# If x is present then return its location 
+# else return -1 
+  
+def search(arr, x): 
+  
+    for i in range(len(arr)): 
+  
+        if arr[i] == x: 
+            return i 
+  
+    return -1
+    
+    Input : arr[] = {10, 20, 80, 30, 60, 50, 
+                     110, 100, 130, 170}
+          x = 110;
+Output : 6
+Element x is present at index 6
+
+Input : arr[] = {10, 20, 80, 30, 60, 50, 
+                     110, 100, 130, 170}
+           x = 175;
+Output : -1
+Element x is not present in arr[].
+
+Live Demo
+import numpy as np 
+a = np.array([[1,2],[3,4]]) 
+
+print 'First array:' 
+print a 
+print '\n'  
+b = np.array([[5,6],[7,8]]) 
+
+print 'Second array:' 
+print b 
+print '\n'  
+# both the arrays are of same dimensions 
+
+print 'Joining the two arrays along axis 0:' 
+print np.concatenate((a,b)) 
+print '\n'  
+
+print 'Joining the two arrays along axis 1:' 
+print np.concatenate((a,b),axis = 1)
+
+
+Its output is as follows −
+First array:
+[[1 2]
+ [3 4]]
+
+Second array:
+[[5 6]
+ [7 8]]
+
+Joining the two arrays along axis 0:
+[[1 2]
+ [3 4]
+ [5 6]
+ [7 8]]
+
+Joining the two arrays along axis 1:
+[[1 2 5 6]
+ [3 4 7 8]]
+ 
+ / This function removes an element x from arr[] and 
+// returns new size after removal (size is reduced only 
+// when x is present in arr[] 
+int deleteElement(int arr[], int n, int x) 
+{ 
+   // Search x in array 
+   int i; 
+   for (i=0; i<n; i++) 
+      if (arr[i] == x) 
+         break; 
+  
+   // If x found in array 
+   if (i < n) 
+   { 
+     // reduce size of array and move all 
+     // elements on space ahead 
+     n = n - 1; 
+     for (int j=i; j<n; j++) 
+        arr[j] = arr[j+1]; 
+   } 
+  
+   return n; 
+} 
+
+Input:  arr[] = {3, 1, 2, 5, 90}, x = 2, size = 5, capacity = 5
+Output: arr[] = {3, 1, 5, 90, _}, size = 4, capacity = 5
