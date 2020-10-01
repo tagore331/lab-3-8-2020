@@ -1,0 +1,81 @@
+# binary search using def frunction
+def Binary_search(mylist,key):
+    low = 0
+    high =len(mylist)-1
+    while low <= high:
+        mid=(low+high)//2  # find mid index
+        if mylist[mid]==key:
+            return mid
+        elif key>mylist[mid]:
+            low=mid-1
+        else:   
+            high=mid-1
+    return -1  # if no match return -1
+mylist=[10,20,30,40,50,60]
+print(mylist)
+key = (int(input("enter number to search :")))
+x = Binary_search(mylist,key)
+if (x==-1):
+    print("element is not in list")
+else:
+    print("element is at index",x)
+  
+  
+  output---
+  [10, 20, 30, 40, 50, 60]
+enter number to search :30
+element is at index 2
+
+
+# binary searching using dynamic input.
+my_list = []
+for i in range(0,6):
+    x = int(input("ënter a number to add" ))
+    x = int(x)
+    my_list.append(x)
+    print("elements")
+    print(my_list)
+def Binary_search(my_list,key):
+    low = 0
+    high =len(my_list)-1
+    while low <= high:
+        mid=(low+high)//2  # find mid index
+        if my_list[mid]==key:
+            return mid
+        elif key>my_list[mid]:
+            low=mid-1
+        else:   
+            high=mid-1
+    return -1  # if no match return -1
+#mylist=[10,20,30,40,50,60]
+print(my_list)
+key = (int(input("enter number to search :")))
+x = Binary_search(my_list,key)
+if (x==-1):
+    print("element is not in list")
+else:
+    print("element is at index",x)
+
+
+output--
+ënter a number to add1
+elements
+[1]
+ënter a number to add2
+elements
+[1, 2]
+ënter a number to add3
+elements
+[1, 2, 3]
+ënter a number to add4
+elements
+[1, 2, 3, 4]
+ënter a number to add5
+elements
+[1, 2, 3, 4, 5]
+ënter a number to add6
+elements
+[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 4, 5, 6]
+enter number to search :3
+element is at index 2
