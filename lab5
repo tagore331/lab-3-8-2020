@@ -1,0 +1,215 @@
+#Create a linked list with few sample nodes as static inputs
+#class
+
+
+
+class Node: 
+
+
+	def __init__(self, data): 
+		self.data = data 
+		self.next = None 
+
+
+class LinkedList: 
+
+
+	def __init__(self): 
+		self.head = None
+
+	def push(self, new_data): 
+
+
+		new_node = Node(new_data) 
+
+
+		new_node.next = self.head 
+
+
+		self.head = new_node 
+
+
+	def insertAfter(self, prev_node, new_data): 
+
+
+		if prev_node is None: 
+			print ("The given previous node must inLinkedList.")
+			return
+
+
+		new_node = Node(new_data) 
+
+
+		new_node.next = prev_node.next
+
+
+		prev_node.next = new_node 
+
+	def append(self, new_data): 
+
+
+		new_node = Node(new_data) 
+
+
+		if self.head is None: 
+			self.head = new_node 
+			return
+
+
+		last = self.head 
+		while (last.next): 
+			last = last.next
+
+
+		last.next = new_node 
+
+
+
+	def printList(self): 
+		temp = self.head 
+		while (temp): 
+			print (temp.data), 
+			temp = temp.next
+
+
+
+
+if __name__=='__main__': 
+
+
+	llist = LinkedList() 
+
+
+	llist.append(21) 
+
+
+	llist.push(19);
+
+
+	llist.push(87); 
+
+
+	llist.append(95) 
+
+	llist.insertAfter(llist.head.next, 5) 
+
+	print ('Created linked list is:'), 
+	llist.printList()
+  OUTPUT:
+  Created linked list is:
+87
+19
+5
+21
+95
+>>> 
+
+
+@@ -0,0 +1,22 @@
+#Create a linked list with inputs from user console.
+l = [] 
+
+n = int(input("Enter number of elements : ")) 
+
+
+for i in range(0, n): 
+	element = (int)(input("enter the element:")) 
+
+	l.append(element) 
+
+print(l)
+
+OUTPUT:
+Enter number of elements : 5
+enter the element:21
+enter the element:19
+enter the element:87
+enter the element:95
+enter the element:12
+[21, 19, 87, 95, 12]
+>>> 
+
+#Insert a node at beginning of the list that has been created already
+#class
+class Node:    
+  def __init__(self,data):    
+    self.data = data;    
+    self.next = None;    
+
+class CreateList:    
+
+  def __init__(self):    
+    self.head = Node(None);    
+    self.tail = Node(None);    
+    self.head.next = self.tail;    
+    self.tail.next = self.head;    
+
+
+  def addAtStart(self,data):    
+    newNode = Node(data);        
+    if self.head.data is None:    
+
+      self.head = newNode;    
+      self.tail = newNode;    
+      newNode.next = self.head;    
+    else:    
+
+        temp = self.head;    
+
+        newNode.next = temp;    
+
+        self.head = newNode;    
+
+        self.tail.next = self.head;    
+
+
+  def display(self):    
+    current = self.head;    
+    if self.head is None:    
+      print("List is empty");    
+      return;    
+    else:    
+        print("Adding nodes to the start of the list: ");    
+
+        print(current.data),    
+        while(current.next != self.head):    
+            current = current.next;    
+            print(current.data),    
+        print("\n");    
+
+class CircularLinkedList:    
+  cl = CreateList();    
+
+
+  cl.addAtStart(95);    
+  cl.display();    
+  cl.addAtStart(87);    
+  cl.display();    #   
+  cl.addAtStart(19);    
+  cl.display();   
+  cl.addAtStart(21);
+  cl.display();
+  OUTPUT:
+  Adding nodes to the start of the list: 
+95
+
+
+Adding nodes to the start of the list: 
+87
+95
+
+
+Adding nodes to the start of the list: 
+19
+87
+95
+
+
+Adding nodes to the start of the list: 
+21
+19
+87
+95
+
+
+>>> 
